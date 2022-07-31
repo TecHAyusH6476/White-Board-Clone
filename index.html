@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteBoard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="tools">
+            <div class="tool">
+                <div class="tool-img active-tool" id="pencil">
+                    <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Black_Pencil.svg" alt="">
+                </div>
+                <div class="tool-options" id="pencil-options">
+                    <div class="pencil-slider">
+                        <input type="range" name="" id="pencil-slider" min="1" max="30" value="1">
+                    </div>
+                    <div class="pencil-color">
+                        <div class="black"></div>
+                        <div class="red"></div>
+                        <div class="blue"></div>
+                        <div class="yellow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tool" >
+                <div class="tool-img" id="eraser">
+                    <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Eraser.svg" alt="">
+                </div>
+                <div class="tool-options" id="eraser-options">
+                    <div class="eraser-slider">
+                        <input type="range" name="" id="eraser-slider" min="1" max="30" value="1">
+                    </div>
+                </div>
+            </div>
+            <div class="tool" id="sticky">
+                <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\StickyNote.svg" alt="">
+            </div>
+            
+            <div class="tool" id="upload">
+                <label for="img-upload">
+                <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Photo.svg" alt="">
+                <input type="file" name="" id="img-upload" style="display:none;">
+                </label>
+            </div>
+            
+            <div class="tool" id="download">
+                <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Download.svg" alt="">
+            </div>
+            <div class="tool" id="undo">
+                <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Undo.svg" alt="">
+            </div>
+            <div class="tool" id="redo">
+                <img src="C:\Users\Admin\Desktop\Development\Lec7_whiteBoard\activity\resources-master\NewIcons\Redo.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <canvas id="canvas" class="canvas"></canvas>
+    </div>
+
+    <!-- variables created in script.js can be used all the files below script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
+    <script>
+        const socket = io.connect("https://openboard-new.herokuapp.com/"); 
+    </script>
+    <script src="./script.js"></script>
+    <script src="./tools.js"></script>
+    <script src="./sticky.js"></script>
+    <script src="./img.js"></script>
+    <script src="./util.js"></script>
+    <script src="./receiver.js"></script>
+</body>
+</html>
